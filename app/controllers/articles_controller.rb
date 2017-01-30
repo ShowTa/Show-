@@ -13,6 +13,15 @@ class ArticlesController < ApplicationController
     redirect_to action: :index
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def delete
+  end
+
   private
 
   def article_params
