@@ -14,12 +14,22 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
+
+    render action: :new
   end
 
   def update
+    article = Article.find(params[:id])
+    article.update(article_params)
+
+    redirect_to action: :index
   end
 
-  def delete
+  def destroy
+    Article.find(params[:id]).delete
+
+    redirect_to action: :index
   end
 
   private
