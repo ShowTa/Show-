@@ -1,4 +1,7 @@
 - @articles.each do |article|
+  %h2
+    作成者
+    = article.user.name
   = article.title
   = article.content
   = link_to '詳細', article_path(article)
