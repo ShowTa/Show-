@@ -3,7 +3,11 @@ class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @articles = Article.all
+    @articles = Article.publishd
+  end
+
+  def draft_index
+    @drafts = Article.draft
   end
 
   def show
@@ -17,7 +21,11 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    current_user.articles.create(article_params)
+    if params[:commit] == '公開'
+      current_user.articles.create(article_params.merge(status: 1))
+    else
+      current_user.articles.create(article_params.merge(status: 0))
+    end
 
     redirect_to action: :index
   end
