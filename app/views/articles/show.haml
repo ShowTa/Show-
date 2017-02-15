@@ -5,3 +5,5 @@
   = f.text_field :text
   = f.hidden_field :article_id, value: @article.id
 
+- @comments.each do |comment|
+  = comment.text
