@@ -6,4 +6,5 @@
   = f.hidden_field :article_id, value: @article.id
 
 - @comments.each do |comment|
-  = comment.text
+  .comment
+    = comment.text
