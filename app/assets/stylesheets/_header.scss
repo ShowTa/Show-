@@ -1,16 +1,24 @@
 .header {
-  height: 50px;
-  border-bottom: 1px solid #000;
+  display: flex;
+  height: 100px;
+  padding: 15px 30px;
+  box-shadow: 0px 0px 3px 2px #9c9c9c;
+  -moz-box-shadow: 0px 0px 3px 2px #9c9c9c;
+  -webkit-box-shadow: 0px 0px 3px 2px #9c9c9c;
   line-height: 50px;
-
+  justify-content: space-between;
+  align-items: center;
+  background: powderblue;
   .app-title {
-    font-size: 48px;
     display: inline-block;
+    font-size: 48px;
+    color: black;
   }
-
+  div{
+    width: 40%;
+  }
   &__list {
-    float: right;
-
+    overflow: hidden;
     &__content {
       display: inline-block;
       float: right;

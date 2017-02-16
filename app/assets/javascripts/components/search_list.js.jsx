@@ -1,12 +1,17 @@
-var SearchBox = React.createClass({
+var SearchList = React.createClass({
   getInitialState: function(){
     return{
       articles:[]
     }
   },
+  componentDidMount: function(){
+    this.setState({
+      articles: this.props.articles,
+    })
+  },
   handleSubmit: function(e){
     e.preventDefault();
-    var word = this.refs.word.value.trim();
+    var word = this.refs.word.value.trim()
     $.ajax({
       url: '/search/' + word,
       dataType: 'json',
@@ -27,13 +32,9 @@ var SearchBox = React.createClass({
       )
     });
     return (
-      <form className="searchbox" onSubmit={this.handleSubmit}>
-        <input type="text" ref="word" placeholder="記事のタイトルで検索できます" />
-        <button type="submit">検索</button>
-        <div>
+        <div className="articlelist">
           {article}
         </div>
-      </form>
     )
   }
 });
