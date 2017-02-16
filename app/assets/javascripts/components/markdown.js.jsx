@@ -1,6 +1,14 @@
 var Markdown = React.createClass({
+  getInitialState: function(){
+    return{
+      content: ''
+    }
+  },
   onChangeText: function(ev){
     this.props.onChange(ev)
+  },
+  componentDidMount: function(){
+    this.setState({content: this.props.content})
   },
   render: function(){
     return(
@@ -30,6 +38,8 @@ var Preview = React.createClass({
   render: function(){
     if(!this.props.content == ''){
       var rawMarkup = marked(this.props.content.toString(), {sanitize: true});
+    } else {
+      var rawMarkup = this.props.content
     }
     return(
       <div>
