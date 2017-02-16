@@ -30,6 +30,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'devise'
 gem 'kaminari'
+gem 'acts-as-taggable-on'
 
 gem 'react-rails', '~> 1.0'
 gem 'marked-rails'
