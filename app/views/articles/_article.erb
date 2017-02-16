@@ -11,5 +11,3 @@
   <%= link_to '編集', edit_article_path(article) if current_user.id == article.user_id %>
   <%= link_to '削除', article_path(article), method: :DELETE %>
 </div>
-
-<%= link_to '新規投稿', new_article_path %>
