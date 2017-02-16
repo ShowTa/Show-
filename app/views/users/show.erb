@@ -1,0 +1,11 @@
+<div class='contents row'>
+  <h2>
+    <%= "#{@user.name}さんの投稿一覧" %>
+  </h2>
+
+  <% @articles.each do |article| %>
+    <%= render partial: 'articles/article', locals: { article: article } %>
+  <% end %>
+
+  <%= paginate(@articles) %>
+</div>
