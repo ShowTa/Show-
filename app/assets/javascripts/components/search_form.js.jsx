@@ -13,7 +13,7 @@ var SearchForm = React.createClass({
     return(
       <form className="searchbox" method="get" action={"/search/" + this.state.searchText}>
         <input type="text" onChange={this.onSearchText} ref="word" placeholder="記事のタイトルで検索できます" />
-        <button type="submit">検索</button>
+        <button type="submit" className="btn btn-success">検索</button>
       </form>
     )
   }
