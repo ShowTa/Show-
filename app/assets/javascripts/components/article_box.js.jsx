@@ -22,9 +22,8 @@ var ArticleBox = React.createClass({
       )
     });
     return (
-      <div className="articleList row">
+      <div className="articlelist">
         {article}
-        <p className="btn btn-default"><a href="articles/new">新規投稿</a></p>
       </div>
     );
   }

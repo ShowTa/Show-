@@ -1,5 +1,20 @@
-body {
-    background: powderblue
+body{
+  background: #e8e8e8;
+}
+
+.container{
+  padding: 30px 50px;
+  margin: 90px auto 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 3px #9c9c9c;
+  -moz-box-shadow: 0px 0px 6px 3px #9c9c9c;
+  -webkit-box-shadow: 0px 0px 6px 3px #9c9c9c;
+  background: white;
+}
+
+.articlelist{
+  overflow: hidden;
+  padding: 0 10px;
 }
 
 .article {
@@ -9,9 +24,9 @@ body {
     padding: 10px 15px;
     background: white;
     border-radius: 5px;
-    box-shadow: 0px 0px 6px 3px #9c9c9c;
-    -moz-box-shadow: 0px 0px 6px 3px #9c9c9c;
-    -webkit-box-shadow: 0px 0px 6px 3px #9c9c9c;
+    box-shadow: 0px 0px 3px 2px #9c9c9c;
+    -moz-box-shadow: 0px 0px 3px 2px #9c9c9c;
+    -webkit-box-shadow: 0px 0px 3px 2px #9c9c9c;
     justify-content: space-between;
 }
 

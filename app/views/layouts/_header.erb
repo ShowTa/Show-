@@ -1,20 +1,18 @@
 <div class='header'>
-  <%= link_to root_path do %>
-    <div class='app-title'>
-      ShowTa
-    </div>
-  <% end %>
-
+  <%= link_to 'ShowTa', root_path, :class => "app-title" %>
+  <%= react_component('SearchForm') %>
   <ul class='header__list'>
     <% if user_signed_in? %>
       <li class='header__list__content'>
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete,:class => "btn btn-default" %>
       </li>
       <li class='header__list__content'>
-        <p className="btn btn-default"><a href="articles/new">新規投稿</a></p>
+        <p className="btn btn-default">
+          <a href="articles/new" class="btn btn-default">新規投稿</a>
+        </p>
       </li>
       <li class='header__list__content'>
-        <%= link_to 'My page', user_path(current_user) %>
+        <%= link_to 'My page', user_path(current_user), :class => "btn btn-default" %>
       </li>
     <% else %>
       <li class='header__list__content'>
@@ -24,8 +22,5 @@
         <%= link_to 'Sign in', new_user_session_path %>
       </li>
     <% end %>
-    <li class="header__list__content">
-        <%= react_component('SearchForm') %>
-    </li>
   </ul>
 </div>

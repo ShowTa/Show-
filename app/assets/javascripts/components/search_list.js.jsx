@@ -32,7 +32,7 @@ var SearchList = React.createClass({
       )
     });
     return (
-        <div>
+        <div className="articlelist">
           {article}
         </div>
     )
