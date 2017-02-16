@@ -19,13 +19,14 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    binding.pry
   end
 
   def create
     if params[:commit] == '公開'
       current_user.articles.create(article_params.merge(status: 1))
     else
-      current_user.articles.create(article_params.merge(status: 1))
+      current_user.articles.create(article_params.merge(status: 0))
     end
 
     redirect_to action: :index
