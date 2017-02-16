@@ -12,7 +12,7 @@ var Markdown = React.createClass({
   },
   render: function(){
     return(
-      <div className="markdown">
+      <div className="row article-editor__contents markdown">
         <Editor content={this.props.content} onChange={this.onChangeText}/>
         <Preview content={this.props.content} />
       </div>
@@ -26,9 +26,10 @@ var Editor = React.createClass({
   },
   render: function(){
     return(
-      <input type="textarea"
-        value={this.props.content} 
+      <textarea
+        value={this.props.content}
         onChange={this._onChange}
+        className="col-md-6 article-editor__content"
       />
     )
   }
@@ -42,8 +43,8 @@ var Preview = React.createClass({
       var rawMarkup = this.props.content
     }
     return(
-      <div>
-        <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
+      <div className="col-md-5">
+        <div dangerouslySetInnerHTML={{__html: rawMarkup}} />
       </div>
     )
   }
