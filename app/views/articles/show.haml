@@ -1,6 +1,8 @@
 = @article.title
 = @article.content
 
+= link_to 'いいね', article_favorites_path(@article), method: :post
+
 = form_for [@article, @comment] do |f|
   = f.text_field :text
   = f.hidden_field :article_id, value: @article.id
