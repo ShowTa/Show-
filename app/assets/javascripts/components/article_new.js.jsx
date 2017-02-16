@@ -1,7 +1,7 @@
 var ArticleNew = React.createClass({
   getInitialState: function(){
     return{
-      content: ''
+      content: '',
     }
   },
   handleSubmit: function(e){
@@ -23,7 +23,7 @@ var ArticleNew = React.createClass({
         "authenticity_token": token
       },
       success:function(data){
-        console.log("ok")
+        console.log("ok",data)
       }.bind(this),
       error:function(xhr,status,err){
         console.log("dame",status,err.toString())
@@ -40,7 +40,7 @@ var ArticleNew = React.createClass({
       <div>
         <h2>新規投稿</h2>
         <input type="text" ref="title" />
-        <Markdown onChange={this.onChangeMarkdown} content={this.state.content}/>
+        <Markdown onChange={this.onChangeMarkdown} content={this.state.content} />
         <a href="/" onClick={this.handleSubmit}>投稿</a>
       </div>
     )
