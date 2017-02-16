@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
 
   def draft_index
     @drafts = Article.draft
-    65aa5f7e316e0048ef8d3b624020632d91946e5a
   end
 
   def show
