@@ -21,8 +21,6 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
-
-    render action: :new
   end
 
   def update

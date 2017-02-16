@@ -3,7 +3,6 @@ var ArticleBox = React.createClass({
     return{ articles: []}
   },
   componentDidMount: function() {
-    // this.setState({articles: this.props.articles});
     $.ajax({
       url: this.props.url,
       dataType: 'json',
@@ -23,9 +22,9 @@ var ArticleBox = React.createClass({
       )
     });
     return (
-      <div className="articleList">
+      <div className="articleList row">
         {article}
-        <p><a href="articles/new">新規投稿</a></p>
+        <p className="btn btn-default"><a href="articles/new">新規投稿</a></p>
       </div>
     );
   }
@@ -34,10 +33,9 @@ var ArticleBox = React.createClass({
 var Article = React.createClass({
   render: function() {
     return (
-      <div className="article">
-        <h2><a href={"articles/" + this.props.article.id}>{this.props.article.title}</a></h2>
-        {this.props.article.content}
-        <a href={"articles/" + this.props.article.id + "/edit"}>編集</a>
+      <div className="article col-xs-12">
+        <h3><a href={"articles/" + this.props.article.id}>{this.props.article.title}</a></h3>
+        <a className="btn btn-default edit" href={"articles/" + this.props.article.id + "/edit"}>編集</a>
       </div>
     );
   }
