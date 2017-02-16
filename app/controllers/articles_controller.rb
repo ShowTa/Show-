@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comment = Comment.new
     @comments = Comment.all
-    @chk_favorite = Favorite.find_by(user_id: current_user.id, article_id: @article.id)
+    @chk_favorite = Favorite.find_by(user_id: current_user.id, article_id: @article.id) if user_signed_in?
   end
 
   def new
