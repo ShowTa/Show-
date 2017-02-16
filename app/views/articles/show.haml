@@ -2,6 +2,7 @@
 = @article.content
 
 = link_to 'いいね', article_favorites_path(@article), method: :post
+= link_to 'いいね', article_favorites_path(@article), method: :delete
 
 = form_for [@article, @comment] do |f|
   = f.text_field :text
