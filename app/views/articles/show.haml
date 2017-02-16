@@ -1,6 +1,11 @@
 = @article.title
 = @article.content
 
+- if @chk_favorite.nil?
+  = link_to 'いいね', article_favorites_path(@article), method: :post
+- else
+  = link_to 'いいね', article_favorites_path(@article), method: :delete
+
 = form_for [@article, @comment] do |f|
   = f.text_field :text
   = f.hidden_field :article_id, value: @article.id
