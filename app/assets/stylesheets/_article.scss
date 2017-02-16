@@ -1,0 +1,12 @@
+.article-editor {
+  &__title {
+    height: 45px;
+    line-height: 45px;
+    font-size: 32px;
+  }
+
+  &__content {
+    margin-top: 50px;
+    height: 60vh;
+  }
+}

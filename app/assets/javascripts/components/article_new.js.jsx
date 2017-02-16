@@ -37,9 +37,9 @@ var ArticleNew = React.createClass({
   },
   render: function(){
     return(
-      <div>
+      <div class="article-editor">
         <h2>新規投稿</h2>
-        <input type="text" ref="title" />
+        <input className="form-control article-editor__title" type="text" ref="title" autoFocus={focus} />
         <Markdown onChange={this.onChangeMarkdown} content={this.state.content} />
         <a href="/" onClick={this.handleSubmit}>投稿</a>
       </div>

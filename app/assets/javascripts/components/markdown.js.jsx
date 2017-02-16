@@ -27,8 +27,9 @@ var Editor = React.createClass({
   render: function(){
     return(
       <input type="textarea"
-        value={this.props.content} 
+        value={this.props.content}
         onChange={this._onChange}
+        className="form-control article-editor__content"
       />
     )
   }
