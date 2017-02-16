@@ -5,8 +5,12 @@
     font-size: 32px;
   }
 
+  &__contents {
+    margin-top: 50px
+  }
+
   &__content {
-    margin-top: 50px;
     height: 60vh;
+    vertical-align: text-top;
   }
 }
