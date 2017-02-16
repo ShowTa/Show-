@@ -1,0 +1,1 @@
+json.data(@article) { |d| json.extract!(d, :id, :title, :content) }

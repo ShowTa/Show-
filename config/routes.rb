@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'articles#index'
 
+  resources :users, only: [:show]
   resources :articles do
     collection do
       get :draft_index

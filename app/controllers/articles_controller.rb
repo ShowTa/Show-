@@ -22,19 +22,21 @@ class ArticlesController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
+    Article.create(article_params)
+=======
     if params[:commit] == '公開'
       current_user.articles.create(article_params.merge(status: 1))
     else
       current_user.articles.create(article_params.merge(status: 0))
     end
 
+>>>>>>> cec394e5b05e0dc4ac440d7c07c8da6ed3868edb
     redirect_to action: :index
   end
 
   def edit
     @article = Article.find(params[:id])
-
-    render action: :new
   end
 
   def update
