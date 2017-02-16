@@ -19,7 +19,6 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    binding.pry
   end
 
   def create
