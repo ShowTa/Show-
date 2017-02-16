@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def draft_index
-    @drafts = Article.draft
+    @drafts = current_user.articles.draft
   end
 
   def show
