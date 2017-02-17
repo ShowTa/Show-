@@ -4,7 +4,13 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.publishd
-    @user = User.all
+    user = User.all
+
+    # @articles_and_users = {}
+    # articles.each do |article|
+    #   @articles_and_users[:article] = article
+    #   @articles_and_users[:user] = User.writen_article(article.user_id)
+    # end
   end
 
   def draft_index
