@@ -29,6 +29,18 @@
         width: 50px;
         border-radius: 30px;
       }
+
+      &__dropdown {
+        position: absolute;
+        top: 40px;
+        left: -80px;
+      }
+
+      &__new-post {
+        height: 50px;
+        line-height: 35px;
+        font-size: 18px;
+      }
     }
   }
 }

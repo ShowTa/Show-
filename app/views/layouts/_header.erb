@@ -4,15 +4,24 @@
   <ul class='header__list'>
     <% if user_signed_in? %>
       <li class='header__list__content'>
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete,:class => "btn btn-default" %>
+        <span class='dropdown'>
+          <a class='dropdown-toggle' data-toggle='dropdown'>
+            <%= image_tag current_user.icon, class: 'header__list__content__user-icon' %>
+          </a>
+          <ul class='dropdown-menu header__list__content__dropdown'>
+            <li>
+              <%= link_to 'My Page', user_path(current_user) %>
+            </li>
+            <li>
+              <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+            </li>
+          </ul>
+        </span>
       </li>
       <li class='header__list__content'>
         <p className="btn btn-default">
-          <a href="/articles/new" class="btn btn-default">新規投稿</a>
+          <a href="/articles/new" class="btn btn-default header__list__content__new-post">新規投稿</a>
         </p>
-      </li>
-      <li class='header__list__content'>
-        <%= link_to 'My page', user_path(current_user), :class => "btn btn-default" %>
       </li>
     <% else %>
       <li class='header__list__content'>
