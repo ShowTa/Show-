@@ -31,6 +31,8 @@ gem 'haml-rails'
 gem 'devise'
 gem 'kaminari'
 gem 'acts-as-taggable-on'
+gem 'carrierwave'
+gem 'rmagick', require: 'RMagick'
 
 gem 'react-rails', '~> 1.0'
 gem 'marked-rails'
