@@ -29,8 +29,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-
-
     if params[:commit] == '公開'
       current_user.articles.create(article_params.merge(status: 1))
     else
