@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.publishd
+    @user = User.all
   end
 
   def draft_index
@@ -22,8 +23,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    tag = params[:tag]
-    Article.all.last.tag_list.add(tag)
     if params[:commit] == '公開'
       current_user.articles.create(article_params.merge(status: 1))
     else
@@ -53,6 +52,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:title, :content, :tag_list)
   end
 end
