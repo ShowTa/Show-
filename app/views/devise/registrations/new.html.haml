@@ -6,6 +6,10 @@
     %br
     = f.text_field :name, autofocus: true, class: 'form-control'
   .field
+    = f.label :icon
+    %br
+    = f.file_field :icon
+  .field
     = f.label :email
     %br
     = f.email_field :email, class: 'form-control'
