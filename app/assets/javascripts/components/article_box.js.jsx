@@ -21,6 +21,7 @@ var ArticleBox = React.createClass({
         <Article key={article.id} article={article} />
       )
     });
+    console.log(this.state.articles)
     return (
       <div className="articlelist">
         {article}
