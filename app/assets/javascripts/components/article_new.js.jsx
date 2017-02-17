@@ -13,14 +13,13 @@ var ArticleNew = React.createClass({
     }
     var token = $('meta[name="csrf-token"]').attr('content');
     $.ajax({
-      url: '/articles',
+      url: '/articles/'+tag,
       dataType: 'json',
       type: 'POST',
       data: {
         article:{
           title: title,
           content: this.state.content,
-          tag: tag
         },
         "authenticity_token": token
       },
