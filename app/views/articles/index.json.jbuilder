@@ -1,1 +1,1 @@
-json.data([@articles, @user])
+json.data(@articles)
