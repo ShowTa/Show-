@@ -19,9 +19,22 @@
         </span>
       </li>
       <li class='header__list__content'>
-        <p className="btn btn-default">
-          <a href="/articles/new" class="btn btn-default header__list__content__new-post">新規投稿</a>
-        </p>
+        <span>
+          <a href="/articles/new" class="btn btn-default header__list__content__new-post">
+            <%= fa_icon "external-link" %>
+            新規投稿
+          </a>
+        </span>
+        <span class='dropdown header__lsit__content__dropdown'>
+          <a class='btn btn-default dropdown-toggle header__list__content__dropdown__link' data-toggle='dropdown'>
+            <%= fa_icon 'sort-desc', class: 'header__list__content__dropdown__link--icon' %>
+          </a>
+          <ul class='dropdown-menu header__list__content__dropdown'>
+            <li>
+              <%= link_to '下書き', draft_index_articles_path %>
+            </li>
+          </ul>
+        </span>
       </li>
     <% else %>
       <li class='header__list__content'>
