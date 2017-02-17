@@ -39,6 +39,7 @@ var ArticleNew = React.createClass({
   render: function(){
     return(
       <div className="article-editor">
+        <h2>新規投稿</h2>
         <input className="row form-control article-editor__title" type="text" ref="title" placeholder="タイトルを入力してください" autoFocus={focus} />
         <input className="row form-control" type="text" ref="tag" placeholder="タグ" />
         <Markdown onChange={this.onChangeMarkdown} content={this.state.content} />
