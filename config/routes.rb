@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     resource :favorites, only: [:create, :destroy]
   end
+  post 'articles/:tag', to: 'articles#create'
   get '/search', to:'search#index'
   get '/search/:word', to: 'search#index'
 end
