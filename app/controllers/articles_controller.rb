@@ -22,8 +22,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    
-
+    tag = params[:tag]
+    Article.all.last.tag_list.add(tag)
     if params[:commit] == '公開'
       current_user.articles.create(article_params.merge(status: 1))
     else
