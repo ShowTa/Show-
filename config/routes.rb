@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get :draft_index
     end
     resources :comments, only: :create
-    resource :favorites, only: [:create, :destroy]
+    resource :favorites, only: [:show, :create, :destroy]
   end
   post 'articles/:tag', to: 'articles#create'
   get '/search', to:'search#index'
