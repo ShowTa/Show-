@@ -1,0 +1,10 @@
+= form_for @article do |f|
+  = f.text_field :title, class: 'row form-control', id: 'aaa'
+  = f.text_field :tag_list, class: 'row form-control'
+  .row
+    .col-md-6
+      = f.text_area :content, id: 'edit-content', class: 'form-control', size: '50x25'
+    .col-md-6
+      #preview
+
+  = f.submit '送信', class: 'row btn btn-primary'

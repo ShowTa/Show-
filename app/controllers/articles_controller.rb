@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
       current_user.articles.create(article_params.merge(status: 1))
     end
 
-    redirect_to action: :index
+    redirect_to :root
   end
 
   def edit
@@ -60,6 +60,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :tag_list)
+    params.require(:article).permit(:title, :content)
   end
 end
