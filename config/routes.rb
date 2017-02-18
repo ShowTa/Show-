@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   post 'articles/:tag', to: 'articles#create'
   get '/search', to:'search#index'
   get '/search/:word', to: 'search#index'
+  get '/users/:id/:favorite', to: 'user#show'
 end

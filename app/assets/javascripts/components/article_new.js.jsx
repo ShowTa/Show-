@@ -13,7 +13,7 @@ var ArticleNew = React.createClass({
     }
     var token = $('meta[name="csrf-token"]').attr('content');
     $.ajax({
-      url: '/articles/'+tag,
+      url: '/articles/' + tag,
       dataType: 'json',
       type: 'POST',
       data: {
@@ -43,7 +43,7 @@ var ArticleNew = React.createClass({
         <input className="row form-control article-editor__title" type="text" ref="title" placeholder="タイトルを入力してください" autoFocus={focus} />
         <input className="row form-control" type="text" ref="tag" placeholder="タグ" />
         <Markdown onChange={this.onChangeMarkdown} content={this.state.content} />
-        <a href="/" className="btn btn-success btn-new" onClick={this.handleSubmit}>投稿</a>
+        <a href="#" className="btn btn-success btn-new" onClick={this.handleSubmit}>投稿</a>
       </div>
     )
   }

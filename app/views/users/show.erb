@@ -9,3 +9,5 @@
 
   <%= paginate(@articles) %>
 </div>
+
+<%= react_component('MyPage', user: @user, articles: @user_articles) %>

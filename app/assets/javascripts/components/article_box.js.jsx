@@ -9,6 +9,7 @@ var ArticleBox = React.createClass({
       dataType: 'json',
       success: function(result) {
         this.setState({articles: result.data});
+        console.log(result.data)
       }.bind(this),
       error: function(xhr, status, err) {
       }.bind(this)
