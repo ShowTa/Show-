@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :favorites
   
   mount_uploader :icon, IconUploader
+
+  scope :writen_article, -> (user_id) { find(user_id) }
 end

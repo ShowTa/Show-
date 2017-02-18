@@ -4,8 +4,18 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.publishd
+
     @tags = Article.all.first.tag_list
-    @user = User.all
+
+    user = User.all
+
+    @articles_and_users = []
+    @articles.each do |article|
+      post = {}
+      post[:article] = article
+      post[:user] = User.writen_article(article.user_id)
+      @articles_and_users << post
+    end
   end
 
   def draft_index
@@ -27,7 +37,7 @@ class ArticlesController < ApplicationController
   def create
     # binding.pry
 
-    redirect_to action: :index
+    redirect_to :root
   end
 
   def edit
@@ -50,6 +60,10 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
+<<<<<<< HEAD
     params.require(:article).permit(:title, :content, :tag_list,)
+=======
+    params.require(:article).permit(:title, :content)
+>>>>>>> 03934afcc572f3dbb94b36173b0236b46c293d08
   end
 end

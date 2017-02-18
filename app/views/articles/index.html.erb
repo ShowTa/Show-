@@ -1,6 +1,6 @@
 <h2>新着記事</h2>
+<%= react_component('ArticleBox', url:"articles", articles_and_users: @articles_and_users ,tags: @tags) %>
 
-<%= react_component('ArticleBox', url:"articles", users: @users, tags: @tags) %>
 
 <!-- <%= link_to '公開一覧', articles_path %>
 <%= link_to '下書き一覧', draft_index_articles_path if user_signed_in? %> -->

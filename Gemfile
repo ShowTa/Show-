@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
+gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
@@ -33,6 +34,9 @@ gem 'kaminari'
 gem 'acts-as-taggable-on'
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+gem 'font-awesome-rails'
 
 gem 'react-rails', '~> 1.0'
 gem 'marked-rails'
