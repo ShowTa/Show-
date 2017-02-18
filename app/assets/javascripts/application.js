@@ -5,6 +5,4 @@
 //= require react_ujs
 //= require components
 //= require marked
-//= require turbolinks
-//= require jquery.turbolinks
 //= require_tree .
