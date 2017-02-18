@@ -9,6 +9,7 @@ var ArticleBox = React.createClass({
       type: 'GET',
       success: function(result) {
         this.setState({articles: result.data});
+        console.log(result.data)
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -21,7 +22,6 @@ var ArticleBox = React.createClass({
         <Article key={article.id} article={article} />
       )
     });
-    console.log(this.state.articles)
     return (
       <div className="articlelist">
         {article}

@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.publishd
+    @tags = Article.all.first.tag_list
     @user = User.all
   end
 
@@ -15,6 +16,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comment = Comment.new
     @comments = Comment.all
+    @user = User.find(@article.user_id)
     @chk_favorite = Favorite.find_by(user_id: current_user.id, article_id: @article.id) if user_signed_in?
   end
 
@@ -23,11 +25,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    if params[:commit] == '公開'
-      current_user.articles.create(article_params.merge(status: 1))
-    else
-      current_user.articles.create(article_params.merge(status: 1))
-    end
+    # binding.pry
 
     redirect_to action: :index
   end
@@ -52,6 +50,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :tag_list)
+    params.require(:article).permit(:title, :content, :tag_list,)
   end
 end
