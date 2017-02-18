@@ -63,16 +63,18 @@ var ArticleShow = React.createClass({
   render: function(){
     var rawMarkup = marked(this.props.article.content.toString(), {sanitize: true});
     var favorite
-    if(this.state.favorite == 1){
-      favorite = "する"
-    } else {
-      favorite = "中"
+    if(this.state.article.article_id === this.props.current_user.id){
+      if(this.state.favorite == 1){
+        favorite = "いいねする"
+      } else {
+        favorite = "いいね中"
+      }
     }
     return(
       <div className="article__show">
         <div className="article__show__header">
           <h2 className="article__show__header__title">{this.state.article.title}</h2>
-          <a onClick={this.handleSubmit}>いいね{favorite}</a>
+          <a onClick={this.handleSubmit}>{favorite}</a>
         </div>
 
         <div className="article__show__content">
