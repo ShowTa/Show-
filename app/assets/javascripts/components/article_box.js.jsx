@@ -1,27 +1,25 @@
 var ArticleBox = React.createClass({
   getInitialState: function(){
-    return{ articles: []}
+    return{ articles: [] }
   },
   componentDidMount: function() {
     $.ajax({
       url: this.props.url,
-      dataType: 'json',
       type: 'GET',
+      dataType: 'json',
       success: function(result) {
         this.setState({articles: result.data});
       }.bind(this),
       error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
    },
   render: function() {
-    var article = this.state.articles.map(function(article){
+    var article = this.props.articles_and_users.map(function(article){
       return(
-        <Article key={article.id} article={article} />
+        <Article key={article.article.id} article={article.article} user={article.user} />
       )
     });
-    console.log(this.state.articles)
     return (
       <div className="articlelist">
         {article}

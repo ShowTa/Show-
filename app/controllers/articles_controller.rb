@@ -6,11 +6,13 @@ class ArticlesController < ApplicationController
     @articles = Article.publishd
     user = User.all
 
-    # @articles_and_users = {}
-    # articles.each do |article|
-    #   @articles_and_users[:article] = article
-    #   @articles_and_users[:user] = User.writen_article(article.user_id)
-    # end
+    @articles_and_users = []
+    @articles.each do |article|
+      post = {}
+      post[:article] = article
+      post[:user] = User.writen_article(article.user_id)
+      @articles_and_users << post
+    end
   end
 
   def draft_index
