@@ -8,6 +8,10 @@
     <p class='article__author__name'><%= article.user.name %></p>
   <% end %>
 
+  <% article.tag_list.each do |tag| %>
+    <span><%= tag %></span>
+  <% end %>
+
   <%= link_to '編集', edit_article_path(article) if current_user.id == article.user_id %>
   <%= link_to '削除', article_path(article), method: :DELETE %>
 </div>
