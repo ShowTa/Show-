@@ -17,7 +17,7 @@ var ArticleBox = React.createClass({
   render: function() {
     var article = this.props.articles_and_users.map(function(article){
       return(
-        <Article key={article.article.id} article={article.article} user={article.user} />
+        <Article key={article.article.id} article={article.article} user={article.user} tags={article.article.tags}/>
       )
     });
     return (

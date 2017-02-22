@@ -1,10 +1,17 @@
 .article {
-  &__author {
-    display: inline-block;
-  }
-
-  &__author__name {
-    font-size: 20px;
-    display: inline-block;
-  }
+    &__author {
+        display: inline-block;
+    }
+    &__author__name {
+        font-size: 20px;
+        display: inline-block;
+    }
+    &__tag {
+        display: inline-block;
+        margin-left: 15px;
+    }
+    &__tag__name {
+        font-size: 20px;
+        display: inline-block;
+    }
 }
